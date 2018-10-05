@@ -4341,6 +4341,7 @@ static void UnHideRedlines(SwRootFrame & rLayout,
                         pFrame->SetMergedPara(nullptr);
                     }
                 }
+                pFrame->Broadcast(SfxHint()); // notify SwAccessibleParagraph
             }
         }
         if (!rNode.IsCreateFrameWhenHidingRedlines())
