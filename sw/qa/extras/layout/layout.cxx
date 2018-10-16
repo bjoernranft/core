@@ -908,7 +908,7 @@ void SwLayoutWriter::testRedlineFlysInFootnote()
         xmlDocPtr pXmlDoc = parseLayoutDump();
         assertXPath(pXmlDoc, "/root/page[1]/body/txt[1]/merged", "paraPropsNodeIndex", "25");
         assertXPath(pXmlDoc, "/root/page[1]/body/txt[1]/Special[1]", "nType", "POR_FTN");
-        assertXPath(pXmlDoc, "/root/page[1]/body/txt[1]/Special[1]", "rText", "2");
+        assertXPath(pXmlDoc, "/root/page[1]/body/txt[1]/Special[1]", "rText", "1");
         assertXPath(pXmlDoc, "/root/page[1]/ftncont/ftn[1]/txt[1]/merged", "paraPropsNodeIndex",
                     "7");
         assertXPath(pXmlDoc, "/root/page[1]/ftncont/ftn[1]/txt[1]/anchored/fly[1]/txt[1]/merged",
@@ -919,7 +919,7 @@ void SwLayoutWriter::testRedlineFlysInFootnote()
                     "Portion", "ahi");
         assertXPath(pXmlDoc, "/root/page[1]/ftncont/ftn[1]/txt[1]/Special[1]", "nType",
                     "POR_FTNNUM");
-        assertXPath(pXmlDoc, "/root/page[1]/ftncont/ftn[1]/txt[1]/Special[1]", "rText", "2");
+        assertXPath(pXmlDoc, "/root/page[1]/ftncont/ftn[1]/txt[1]/Special[1]", "rText", "1");
 
         lcl_dispatchCommand(mxComponent, ".uno:ShowTrackedChanges", {});
         CPPUNIT_ASSERT(!pLayout->IsHideRedlines());
@@ -1006,12 +1006,12 @@ void SwLayoutWriter::testRedlineFlysInFootnote()
 
         assertXPath(pXmlDoc, "/root/page[1]/body/txt[1]/merged", "paraPropsNodeIndex", "25");
         assertXPath(pXmlDoc, "/root/page[1]/body/txt[1]/Special[1]", "nType", "POR_FTN");
-        assertXPath(pXmlDoc, "/root/page[1]/body/txt[1]/Special[1]", "rText", "2");
+        assertXPath(pXmlDoc, "/root/page[1]/body/txt[1]/Special[1]", "rText", "1");
         assertXPath(pXmlDoc, "/root/page[1]/ftncont/ftn[1]/txt[1]/merged", "paraPropsNodeIndex",
                     "7");
         assertXPath(pXmlDoc, "/root/page[1]/ftncont/ftn[1]/txt[1]/Special[1]", "nType",
                     "POR_FTNNUM");
-        assertXPath(pXmlDoc, "/root/page[1]/ftncont/ftn[1]/txt[1]/Special[1]", "rText", "2");
+        assertXPath(pXmlDoc, "/root/page[1]/ftncont/ftn[1]/txt[1]/Special[1]", "rText", "1");
 
         { // hide: no anchored object shown
             xmlXPathObjectPtr pXmlObj = getXPathNode(pXmlDoc, "//anchored");
@@ -1105,7 +1105,7 @@ void SwLayoutWriter::testRedlineFlysInFootnote()
         xmlDocPtr pXmlDoc = parseLayoutDump();
         assertXPath(pXmlDoc, "/root/page[1]/body/txt[1]/merged", "paraPropsNodeIndex", "25");
         assertXPath(pXmlDoc, "/root/page[1]/body/txt[1]/Special[1]", "nType", "POR_FTN");
-        assertXPath(pXmlDoc, "/root/page[1]/body/txt[1]/Special[1]", "rText", "2");
+        assertXPath(pXmlDoc, "/root/page[1]/body/txt[1]/Special[1]", "rText", "1");
         assertXPath(pXmlDoc, "/root/page[1]/ftncont/ftn[1]/txt[1]/merged", "paraPropsNodeIndex",
                     "7");
         assertXPath(pXmlDoc, "/root/page[1]/ftncont/ftn[1]/txt[1]/anchored/fly[1]/txt[1]/merged",
@@ -1116,7 +1116,7 @@ void SwLayoutWriter::testRedlineFlysInFootnote()
                     "Portion", "ahi");
         assertXPath(pXmlDoc, "/root/page[1]/ftncont/ftn[1]/txt[1]/Special[1]", "nType",
                     "POR_FTNNUM");
-        assertXPath(pXmlDoc, "/root/page[1]/ftncont/ftn[1]/txt[1]/Special[1]", "rText", "2");
+        assertXPath(pXmlDoc, "/root/page[1]/ftncont/ftn[1]/txt[1]/Special[1]", "rText", "1");
 
         lcl_dispatchCommand(mxComponent, ".uno:ShowTrackedChanges", {});
         CPPUNIT_ASSERT(!pLayout->IsHideRedlines());
