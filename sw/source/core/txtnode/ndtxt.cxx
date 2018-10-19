@@ -3968,7 +3968,7 @@ SwNodeNum* SwTextNode::CreateNum() const
 {
     if ( !mpNodeNum )
     {
-        mpNodeNum = new SwNodeNum( const_cast<SwTextNode*>(this) );
+        mpNodeNum = new SwNodeNum( const_cast<SwTextNode*>(this), false );
     }
     return mpNodeNum;
 }
@@ -4265,7 +4265,7 @@ void SwTextNode::AddToList()
     if (pList)
     {
         assert(!mpNodeNum);
-        mpNodeNum = new SwNodeNum(this);
+        mpNodeNum = new SwNodeNum(this, false);
         pList->InsertListItem(*mpNodeNum, false, GetAttrListLevel());
     }
 }
