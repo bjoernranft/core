@@ -1996,6 +1996,7 @@ bool SwDoc::MoveParagraph( const SwPaM& rPam, long nOffset, bool bIsOutlMv )
             aPam.GetBound(false).nContent.Assign( nullptr, 0 );
 
             getIDocumentRedlineAccess().AppendRedline( pNewRedline, true );
+            sw::UpdateFramesForAddDeleteRedline(*this, *pNewRedline);
 
             // Still NEEDS to be optimized!
             getIDocumentRedlineAccess().SetRedlineFlags( eOld );
